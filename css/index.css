@@ -1,0 +1,130 @@
+body {
+    background: url(../img/颜色填充_1.png);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.header_title {
+    background: url(../img/title_拷贝_3.png);
+    width: 962px;
+    height: 68px;
+    margin-top: 32px;
+}
+
+.header_618 {
+    background: url(../img/618同行们都用了视频.png);
+    width: 443px;
+    height: 39px;
+}
+
+.header_sj {
+    background: url(../img/数据.png);
+    width: 562px;
+    height: 23px;
+    margin-top: 104px;
+    position: absolute;
+}
+
+.main {
+    width: 100%;
+    height: 57px;
+    margin-top: 88px;
+    min-width: 1200px;
+}
+
+.tab {
+    width: 239px;
+    height: 57px;
+    border: 1px solid #46a3f3;
+    display: inline-block;
+    background-color: #9416fe;
+    color: #5e77f6;
+    text-align: center;
+    line-height: 57px;
+}
+
+.active {
+    background-color: #46a3f3;
+    color: #fff;
+}
+
+.tabCon {
+    height: 1195px;
+    margin-top: 88px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.right {
+    margin-right: 22px;
+}
+
+.tabCon_tab {
+    width: 283px;
+    height: 401px;
+    float: left;
+    margin-top: 21px;
+}
+
+.tabCon_img {
+    width: 264px;
+    height: 161px;
+    margin: 8px 9px
+}
+
+.left {
+    margin-left: 17px;
+}
+
+.fs {
+    display: block;
+    width: 165px;
+    height: 20px;
+    font-size: 20px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 1);
+    line-height: 36px;
+    margin-top: 19px;
+}
+
+.js {
+    display: block;
+    width: 110px;
+    height: 18px;
+    font-size: 18px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 1);
+    line-height: 36px;
+    margin-top: 11px;
+}
+
+.content {
+    display: block;
+    width: 234px;
+    height: 61px;
+    font-size: 15px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 1);
+    line-height: 23px;
+    margin-top: 17px;
+}
+
+.btn {
+    width: 215px;
+    height: 47px;
+    background: url(../img/按钮.png);
+    margin: 20px 34px 15px 34px;
+    cursor: pointer;
+}

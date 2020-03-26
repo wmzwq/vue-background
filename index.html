@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="header center">
+            <div class="header_title center">
+                <p class="header_618"></p>
+            </div>
+            <div class="header_sj"></div>
+        </div>
+        <div class="main center">
+            <div class="tab" v-for="(item,index) in list" :class="{active:(index+1) == num}" @click="tab(index+1)"
+                :key="index">
+                {{item.item_name}}
+            </div>
+        </div>
+        <div class="tabCon">
+            <div class="tabCon_tab" v-for='(itemCon,index) in tabList' :class="(index+1)%4!==0||index===0?'right':''"
+                :style="{'background':(index)%4!==0? 'url(./img/bg2.png) ': 'url(./img/bg3.png)'}">
+                <div :style="{backgroundImage: 'url(' + itemCon.item_pic + ')' , backgroundSize:'cover'}"
+                    class="tabCon_img"></div>
+                <span class="fs left">{{itemCon.item_title}}</span>
+                <span class="js left">讲师：{{itemCon.item_desc}}</span>
+                <span class="content left">{{itemCon.item_desc2}}</span>
+                <div class="btn" @click="jump(itemCon.item_url)"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                list: [],
+                tabList: [],
+                num: 1
+            },
+            created() {
+                this.getUserInfo();
+            },
+            watch: {
+
+                num: function (newStr, oldStr) {
+                    var _that = this
+                    console.log(newStr);
+                    _that.tabList = _that.list[newStr - 1].items2
+                    console.log(_that.tabList)
+                },
+            },
+            methods: {
+                tab(index) {
+                    this.num = index;
+                },
+                jump(url) {
+                    window.location.href = url
+                },
+                getUserInfo() {
+                    var _that = this
+                    axios.get('https://lanqiangxcx.cn/php/ygcs.php')
+                        .then(function (response) {
+                            _that.list = response.data.list
+                            _that.tabList = _that.list[_that.num - 1].items2
+                            console.log(_that.list)
+                            console.log(_that.tabList)
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
